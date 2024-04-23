@@ -1,29 +1,57 @@
-DDoS Attack Analysis - Travel Agency Website
-This repository contains the analysis of a Distributed Denial-of-Service (DDoS) attack on a travel agency website. This work is a part of the Google Cybersecurity Professional Certificate Program course "Analyze Network Attacks".
+# DDoS Attack Analysis - Travel Agency Website
 
-Scenario:
+## Overview
 
-The travel agency website experiences a connection timeout error. Investigation reveals a large number of TCP SYN requests originating from an unfamiliar IP address. This overload of connection requests overwhelms the web server, preventing legitimate users from accessing the website.
+This repository is part of the Google Cybersecurity Professional Certificate Program, focusing on a detailed analysis of a Distributed Denial-of-Service (DDoS) attack targeting a travel agency's website. The aim is to study the nature of the attack, identify its impacts, and develop strategies to mitigate such incidents in the future.
 
-Analysis:
+## Scenario
 
-The symptoms and log data indicate a DDoS attack, specifically a SYN flood attack.
-The attacker sends a massive number of SYN packets, disrupting the normal three-way handshake process used by TCP to establish connections.
-The server becomes overloaded with half-opened connections, exhausting resources and preventing it from responding to legitimate requests.
-Findings:
+The travel agency's website started experiencing persistent connection timeouts, traced back to an overwhelming number of TCP SYN requests from various unfamiliar IP addresses, indicating a DDoS attack.
 
-This DDoS attack disrupts the travel agency's business operations by making the website inaccessible to customers and employees.
-Simple IP blocking is a temporary solution as attackers can spoof IP addresses.
-Recommended Next Steps:
+## Analysis Highlights
 
-Implement a DDoS protection service to filter malicious traffic before it reaches the server.
-Configure a Web Application Firewall (WAF) to identify and block suspicious traffic patterns.
-Set up rate limiting rules on the firewall to restrict the number of incoming connections per IP address.
-Develop an incident response plan to efficiently handle future security incidents.
-Further Investigation:
+- *Attack Type:* Identified as a SYN flood attack, which is a form of DDoS.
+- *Methodology:* Massive amounts of SYN packets were sent to disrupt the server's normal TCP three-way handshake, creating numerous half-open connections.
+- *Impact:* The server's resources were exhausted, preventing responses to legitimate traffic and causing significant operational disruptions.
 
-Investigate the source of the attack and potential reasons behind it.
-Research industry best practices for DDoS prevention and mitigation strategies.
-Disclaimer:
+## Repository Structure
 
-This repository is for educational purposes only and does not contain any sensitive information from the actual scenario.
+- /logs - Contains logs capturing the sequence and pattern of the attack.
+- /scripts - Scripts used for log analysis and pattern detection.
+- /docs - Documentation on findings, analysis, and recommendations for future prevention measures.
+
+## Getting Started
+
+To delve into the DDoS attack analysis:
+
+1. Clone this repository to your local system.
+2. Navigate to the /scripts directory.
+3. Execute the scripts to process the logs stored in /logs.
+4. Refer to the /docs directory for detailed analysis and mitigation strategies.
+
+## Tools Used
+
+- Wireshark: For capturing and analyzing network packets.
+- Custom Python scripts for automating log analysis.
+
+## Contributing
+
+Contributions to enhance the analysis or improve mitigation strategies are welcome. To contribute:
+
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature/AmazingFeature).
+3. Commit your changes (git commit -m 'Add some AmazingFeature').
+4. Push to the branch (git push origin feature/AmazingFeature).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For queries or issues related to this analysis, please open an issue in this repository.
+
+## Acknowledgments
+
+- Thanks to the Google Cybersecurity Professional Certificate Program for the educational framework and guidance provided for this analysis.
